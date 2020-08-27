@@ -1,0 +1,21 @@
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends apt-utils
+RUN apt-get install -y software-properties-common curl zip unzip wget build-essential
+RUN add-apt-repository -y ppa:ondrej/php
+RUN add-apt-repository -y ppa:ondrej/nginx-mainline
+RUN apt-get update
+RUN apt-get install git mysql-server nginx supervisor sendmail -y
+RUN apt-get install php7.4-fpm php7.4-bcmath php7.4-bz2 php7.4-curl php7.4-gd php7.4-intl php7.4-mbstring php7.4-mysql php7.4-xml php7.4-zip -y
+RUN apt-get upgrade -y
+RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+RUN rm composer-setup.php
+RUN mkdir /dsquare
+RUN apt-get clean
+RUN cat /dev/null > ~/.bash_history
+ENV DEBIAN_FRONTEND teletype
+
+EXPOSE 80
+EXPOSE 3306
