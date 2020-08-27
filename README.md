@@ -30,6 +30,15 @@ Example:
 docker run -it gbuatdsquare/uemp:latest bash
 ```
 
+## Remove
+
+Command:
+
+```
+docker image ls
+docker image rm <image-id> [--force]
+```
+
 ## Push
 
 Command:
