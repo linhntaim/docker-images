@@ -13,7 +13,21 @@ docker build -f <docker-file> -t gbuatdsquare/<repo-name>[:<tag>] ./
 Example:
 
 ```
-docker build -f uemp.docker -t gbuatdsquare/uemp:lastest ./
+docker build -f uemp.docker -t gbuatdsquare/uemp:latest ./
+```
+
+## Run
+
+Command:
+
+```
+docker run -it gbuatdsquare/<repo-name>[:<tag>] [<command>]
+```
+
+Example:
+
+```
+docker run -it gbuatdsquare/uemp:latest bash
 ```
 
 ## Push
