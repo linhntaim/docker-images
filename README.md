@@ -2,6 +2,8 @@
 
 ## Build
 
+Prepare a docker file (should be named `{image-name}.docker`) for building an image.
+
 Command:
 
 ```
